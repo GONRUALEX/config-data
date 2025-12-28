@@ -6,3 +6,10 @@ eureka:
     register-with-eureka: false
     service-url:
       default-zone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    # Desactivar protección de red (explicado abajo)
+    enable-self-preservation: false
+    # Revisar cada 60 segundos quién está muerto (por defecto es 60s)
+    eviction-interval-timer-in-ms: 5000
+    # Hace que arranque más rápido sin esperar sincronización
+    wait-time-in-ms-when-sync-empty: 0
